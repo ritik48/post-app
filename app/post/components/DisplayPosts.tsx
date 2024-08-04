@@ -1,16 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { Post } from "./Post";
-import { usePost } from "@/hooks/usePost";
+import { usePosts } from "@/hooks/usePost";
 
-type PostType = {
-    title: string;
-    _id: string;
-};
-
-export function DisplayPosts({ initialPosts }: { initialPosts: PostType[] }) {
-    const { posts } = usePost({ initialPosts });
+export function DisplayPosts() {
+    const { posts } = usePosts()
 
     return (
         <div>
